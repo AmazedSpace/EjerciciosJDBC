@@ -123,6 +123,13 @@ public class AlumnoRepositoryImpl implements AlumnoRepository {
 			e.printStackTrace();
 		}
 		
+		// Close connection
+		try {
+			conn.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
 		return result;
 	}
 
@@ -141,6 +148,13 @@ public class AlumnoRepositoryImpl implements AlumnoRepository {
 			PreparedStatement pst = conn.prepareStatement(sql);
 			pst.setString(1, dni);
 			result = pst.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		// Close connection
+		try {
+			conn.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -169,6 +183,13 @@ public class AlumnoRepositoryImpl implements AlumnoRepository {
 			pst.setInt(3, edad);
 			pst.setString(4, dni);
 			result = pst.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		// Close connection
+		try {
+			conn.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
